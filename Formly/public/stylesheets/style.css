@@ -1,0 +1,166 @@
+body {
+  padding: 0px;
+  margin: 0px;
+  width: 100%;
+  height: 100%;
+  font: 14px "OrkneyRegular", Helvetica, Arial, sans-serif;
+  background-color:white;
+}
+
+h1{
+	color:black;
+	font: 66px "Bree Serif";
+	text-align:center;
+	margin:12px;
+	margin-bottom: 0px;
+}
+p{
+	margin:6px;
+	margin-bottom: 12px;
+	font: 14px "OrkneyRegular";
+	margin-top: 0px;
+}
+a{
+	text-decoration: none;
+	height: auto;
+	color: inherit;
+}
+.flex_container{
+	width: 100%;
+	display:flex;
+}
+.header{
+	height:96px;
+	background-color:black;
+}
+.logo{
+	display:block;
+	height:36px;
+	margin:auto;
+}
+.logo_container{
+	padding:30px;
+	height:96px;
+}
+.nav{
+	display:flex;
+	padding:30px 0px;
+	width: 260px;
+}
+.equal_spacer{
+	flex-grow: 1;
+}
+button, .button{
+	font:14px "OrkneyRegular";
+	backround:none;
+	border:none;
+	border-radius:5px;
+	background-color:white;
+	cursor:pointer;
+	text-decoration:none;
+	text-align: center;
+	color:black;
+	line-height:100%;
+	transition: width 0.2s;
+}
+button:focus, .button:focus{
+	border-style: none;
+}
+.smallButton{
+	border-radius:2px;
+	width: 72px;
+	height: 30px;
+	line-height:30px;
+	text-align:center;
+	transition: width 0.2s;
+}
+.smallButton:hover{
+	width:96px;
+}
+.regButton{
+	color:white;
+	background-color:#D9D9D9;
+	border-radius:5px;
+	width: 240px;
+	height: 48px;
+	line-height:100%;
+	text-align:center;
+	margin: 0px;
+	transition: width 0.2s;
+}
+.regButton:hover{
+	width:268px;
+}
+.button_signin{
+	background-color: #6BCDFD;
+	color:white;
+}
+.button_splash{
+	height: 48px;
+}
+.button_form{
+	margin: 6px;
+	line-height: 48px;
+	flex-grow: 1;
+	width:0px;
+	border-radius: 5px;
+	height: 48px;
+	text-align: center;
+	color: white;
+	background-color:#D9D9D9;
+	transition: flex-grow 0.2s;
+}
+.button_form:hover{
+	flex-grow: 2;
+}
+.button_submit{
+	background-color:#91D9AF;
+}
+.button_register{
+}
+.button_learnmore_splash{
+	background-color:#91D9AF;
+}
+.splash{
+	font: 66px "Bree Serif";
+	text-align:center;
+	padding:48px 0px;
+	color: black;
+	line-height:auto;
+	width: 100%;
+	height: auto;
+}
+.splash_buttons{
+	margin:24px;
+	line-height:24px;
+}
+.splash_statement{
+	width: 50%;
+	text-align: justify;
+}
+.content_form{
+	width:372px;
+}
+.input_text{
+	font:inherit;
+	border: none;
+	border-radius: 5px;
+	width: 360px;
+	height: 36px;
+	background-color: #434343;
+	text-align:center;
+	margin:6px;
+	color: #999999;
+}
+
+
+
+
+
+
+
+
+
+
+
+

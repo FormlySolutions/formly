@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head><% include ../partials/head %>
+</head>
+<body>
+	<% include ../partials/header %>
+	<div class="flex_container">
+		<div class="equal_spacer"></div>
+		<div class="content_form">
+			<h1>Welcome</h1>
+			<p>We just need a bit of information to make your account. This is how you will log into formly.</p>
+			<form action="reg" method="post">
+				<input type="text" class="input_text" name="Email"placeholder="Email" required="required">
+				<input type="password"class="input_text" name="Password" placeholder="Password" required="required">
+				<input type="checkbox"class="input_tac" name="TaC" required="required"> I agree to the terms and conditions.<br>
+				<input type="checkbox"class="input_su" name="SoloUsage" required="required"> I verify that only I will have access to this account.<br>
+				<% include ../partials/form_buttons_help_submit %>
+			</form>
+		</div>
+		<div class="equal_spacer"></div>
+	</div>
+</body>
+</html>

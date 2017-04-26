@@ -1,0 +1,14 @@
+{
+  "name": "Formly",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "4.*",
+    "ejs": "*",
+    "body-parser" : "*",
+    "jquery" : "*"
+  }
+}
