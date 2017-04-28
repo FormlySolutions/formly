@@ -3,8 +3,15 @@
 <head><% include ../partials/head %>
 </head>
 <body>
-	<% include ../partials/header %>
-	<h1>Simplify Signing</h1>
+	<%- include("../partials/header") %>
+	<div class="flex_container">
+		<div class="equal_spacer"></div>
+		<div>
+			<h1>Simplify Signing</h1>
+			<div class="seperator"></div>
+		</div>
+		<div class="equal_spacer"></div>
+	</div>
 	<div class="flex_container">
 		<div class="equal_spacer"></div>
 		<p class="splash_statement">
@@ -15,10 +22,14 @@
 		</p>
 		<div class="equal_spacer"></div>
 	</div>
-	<div class="splash_buttons">
-		<button class="regButton button_register">Register</button>
-		<button class="regButton button_learnmore_splash">Learn More
-		</button>
+	<div class="flex_container">
+		<div class="equal_spacer"></div>
+		<div class="splash_buttons flex_container">
+			<button class="regButton button_register">Register</button>
+			<button class="regButton button_learnmore_splash">Learn More
+			</button>
+		</div>
+		<div class="equal_spacer"></div>
 	</div>
 </body>
 </html>

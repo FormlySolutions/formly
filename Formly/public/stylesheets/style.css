@@ -1,166 +1,340 @@
 body {
-  padding: 0px;
-  margin: 0px;
-  width: 100%;
-  height: 100%;
-  font: 14px "OrkneyRegular", Helvetica, Arial, sans-serif;
-  background-color:white;
+	padding: 0px;
+	margin: 0px;
+	width: 100%;
+	height: 100%;
+	font: 14px "OrkneyRegular", Helvetica, Arial, sans-serif;
+	background-color: white;
 }
 
-h1{
-	color:black;
+html {
+	height: 100%;
+}
+
+h1 {
+	color: black;
 	font: 66px "Bree Serif";
-	text-align:center;
-	margin:12px;
+	text-align: center;
+	margin: 12px;
 	margin-bottom: 0px;
 }
-p{
-	margin:6px;
-	margin-bottom: 12px;
+
+h2 {
+	text-align: center;
+	width: 100%;
+	color: white;
+}
+
+p {
+	margin: 6px;
 	font: 14px "OrkneyRegular";
 	margin-top: 0px;
 }
-a{
+
+a {
 	text-decoration: none;
 	height: auto;
 	color: inherit;
 }
-.flex_container{
+
+.flex_container {
 	width: 100%;
-	display:flex;
+	display: flex;
 }
-.header{
-	height:96px;
-	background-color:black;
+
+.vflex_container {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
 }
-.logo{
-	display:block;
-	height:36px;
-	margin:auto;
+
+.header {
+	height: 96px;
+	background-color: black;
 }
-.logo_container{
-	padding:30px;
-	height:96px;
+
+.logo {
+	display: block;
+	height: 36px;
+	margin: auto;
 }
-.nav{
-	display:flex;
-	padding:30px 0px;
+
+.logo_container {
+	padding: 30px;
+	margin-left: 36px;
+	height: 96px;
+}
+
+.nav {
+	display: flex;
+	margin-right: 48px;
+	padding: 30px 0px;
 	width: 260px;
+	padding: 30px 0px;
 }
-.equal_spacer{
+
+.equal_spacer {
 	flex-grow: 1;
 }
-button, .button{
-	font:14px "OrkneyRegular";
-	backround:none;
-	border:none;
-	border-radius:5px;
-	background-color:white;
-	cursor:pointer;
-	text-decoration:none;
+
+button, .button {
+	font: 14px "OrkneyRegular";
+	backround: none;
+	border: none;
+	border-radius: 5px;
+	background-color: white;
+	cursor: pointer;
+	text-decoration: none;
 	text-align: center;
-	color:black;
-	line-height:100%;
+	color: black;
+	line-height: 100%;
+	color: white;
+	background-color: #D9D9D9;
 	transition: width 0.2s;
+	background-color: #D9D9D9;
 }
-button:focus, .button:focus{
+
+button:focus, .button:focus {
 	border-style: none;
 }
-.smallButton{
-	border-radius:2px;
+
+.smallButton {
+	border-radius: 2px;
 	width: 72px;
 	height: 30px;
-	line-height:30px;
-	text-align:center;
+	line-height: 30px;
+	text-align: center;
 	transition: width 0.2s;
 }
-.smallButton:hover{
-	width:96px;
+
+.smallButton:hover {
+	width: 96px;
 }
-.regButton{
-	color:white;
-	background-color:#D9D9D9;
-	border-radius:5px;
-	width: 240px;
+
+.regButton {
+	color: white;
+	background-color: #D9D9D9;
+	border-radius: 5px;
+	flex-grow: 1;
 	height: 48px;
-	line-height:100%;
-	text-align:center;
-	margin: 0px;
-	transition: width 0.2s;
+	line-height: 100%;
+	text-align: center;
+	height: 48px;
+	line-height: 100%;
+	text-align: center;
+	margin: 6px;
+	transition: flex-grow 0.2s;
 }
-.regButton:hover{
-	width:268px;
+
+.regButton:hover {
+	flex-grow: 2;
 }
-.button_signin{
-	background-color: #6BCDFD;
-	color:white;
+
+.button_signin {
+	background-color: #4fa7ff;
+	color: white;
 }
-.button_splash{
+
+.button_splash {
 	height: 48px;
 }
-.button_form{
+
+.button_form {
 	margin: 6px;
 	line-height: 48px;
 	flex-grow: 1;
-	width:0px;
+	width: 0px;
 	border-radius: 5px;
 	height: 48px;
 	text-align: center;
-	color: white;
-	background-color:#D9D9D9;
 	transition: flex-grow 0.2s;
 }
-.button_form:hover{
+
+.button_form:hover {
 	flex-grow: 2;
 }
-.button_submit{
-	background-color:#91D9AF;
+
+.button_submit {
+	background-color: #91D9AF;
 }
-.button_register{
+
+.button_login {
+	
 }
-.button_learnmore_splash{
-	background-color:#91D9AF;
+
+.button_register {
+	
 }
-.splash{
+
+.button_learnmore_splash {
+	background-color: #91D9AF;
+}
+
+.splash {
 	font: 66px "Bree Serif";
-	text-align:center;
-	padding:48px 0px;
+	text-align: center;
+	padding: 48px 0px;
 	color: black;
-	line-height:auto;
+	line-height: auto;
 	width: 100%;
 	height: auto;
 }
-.splash_buttons{
-	margin:24px;
-	line-height:24px;
+
+.seperator {
+	width: 100%;
+	height: 0px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #dddddd;
+	margin: 12px;
 }
-.splash_statement{
+
+.splash_buttons {
+	margin: 6px;
+	width: 50%;
+	line-height: 24px;
+}
+
+.main_app {
+	flex-grow: 1;
+}
+
+.main_app_sidebar {
+	background-color: #242424;
+	width: 222px;
+	padding: 12px;
+}
+
+.main_app_sidebar_item {
+	border-radius: 5px;
+	margin-top: 12px;
+	margin-bottom: 12px;
+	text-align: center;
+	line-height: 48px;
+	font-size: 18px;
+	color: #909090;
+	height: 48px;
+	width: 100%;
+	cursor: pointer;
+	transition: background-color 0.2s, color 0.2s;
+	text-align: center;
+}
+
+.main_app_sidebar_child {
+	background-color: #535353;
+	color: white;
+}
+
+.main_app_sidebar_child:hover {
+	background-color: #636363;
+}
+
+.main_app_sidebar_child_selected {
+	background-color: #6085e6;
+}
+
+.main_app_sidebar_add_child {
+	background-color: #303030;
+}
+
+.main_app_sidebar_add_child:hover {
+	background-color: #404040;
+}
+
+.main_app_content {
+	padding: 12px;
+	padding-left: 48px;
+	padding-right: 48px;
+	padding-left: 48px;
+}
+
+.main_app_content_header {
+	height: 48px;
+}
+
+.main_app_content_header_name {
+	flex-grow: 1;
+	background-color: #4fa7ff;
+	color: white;
+	border-radius: 5px;
+	text-align: center;
+	line-height: 48px;
+	font-size: 18px;
+}
+
+.main_app_content_body {
+	flex-grow: 1;
+}
+
+.main_app_content_form {
+	height: 128px;
+	width: 128px;
+	color: white;
+	background-color: grey;
+	border-radius: 5px;
+	margin: 12px;
+	margin-left: 0px;
+	text-align: center;
+	cursor: pointer;
+	transition: width 0.2s, height 0.2s;
+}
+
+.content_form_data_container {
+	height: 128px;
+	width: 128px;
+}
+
+.main_app_content_form:hover {
+	width: 142px;
+}
+
+.main_app_content_form_accepted {
+	
+}
+
+.main_app_content_form_declined {
+	
+}
+
+.content_form_name {
+	font-weight: bold;
+}
+
+.content_form_date {
+	font-size: 12px;
+}
+
+.content_forms_supercontainer {
+	color: #535353;
+	font-size: 18px;
+	margin-top: 12px;
+}
+
+.input_chk {
+	margin-left: 6px;
+}
+
+.main_app_content {
+	flex-grow: 1;
+}
+
+.splash_statement {
 	width: 50%;
 	text-align: justify;
 }
-.content_form{
-	width:372px;
+
+.content_form {
+	width: 372px;
 }
-.input_text{
-	font:inherit;
+
+.input_text {
+	font: inherit;
 	border: none;
 	border-radius: 5px;
 	width: 360px;
 	height: 36px;
 	background-color: #434343;
-	text-align:center;
-	margin:6px;
+	text-align: center;
+	margin: 6px;
 	color: #999999;
 }
-
-
-
-
-
-
-
-
-
-
-
-

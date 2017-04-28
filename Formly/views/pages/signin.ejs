@@ -7,21 +7,21 @@
 	<div class="flex_container">
 		<div class="equal_spacer"></div>
 		<div class="content_form">
-			<h1>Hi!</h1>
+			<h1>Sign In</h1>
 			<div class="flex_container">
 				<div class="equal_spacer"></div>
 				<div class="seperator"></div>
 				<div class="equal_spacer"></div>
 			</div>
-			<p>Before you create your account, we'd like to make sure your
-				school board supports Formly. Please enter the information required
-				below.</p>
 			<form action="prereg" method="post" enctype="application/json">
-				<input type="text" class="input_text" name="School Board"
-					placeholder="School Board" required="required"> <input
-					type="text" class="input_text" name="Country" placeholder="Country"
-					required="required"> <% include
-				../partials/form_buttons_help_submit %>
+				<input type="text" class="input_text" name="Username"
+					placeholder="Username" required="required"> <input
+					type="password" class="input_text" name="Password"
+					placeholder="Password" required="required">
+				<div class="flex_container">
+					<a class="button button_form button_help_prereg">Help</a>
+					<button class="button_form button_signin" type="submit">Submit</button>
+				</div>
 			</form>
 		</div>
 		<div class="equal_spacer"></div>

@@ -8,6 +8,8 @@ var express = require('express')
   , user = require('./routes/user')
   , prereg = require('./routes/prereg')//preregistration page
   , reg = require('./routes/reg')//registration page
+  , signin = require('./routes/signin')//signin page
+  , main_app = require('./routes/app')//app
   , http = require('http')
   , path = require('path')
   , bodyParser = require('body-parser');
@@ -35,13 +37,18 @@ var urlParser = bodyParser.urlencoded({extended: false});
 app.get('/', routes.index);
 app.get('/users', user.list);
 
-//route normal requests
+//initial routing of normal requests
 //requests to pre-register page
 app.get('/prereg', prereg.get);
 app.post('/prereg', urlParser, prereg.post);
 //requests made to the register page
 app.get('/reg', reg.get);
 app.post('/reg', urlParser, reg.post);
+//requests made to signin page
+app.get('/signin', signin.get);
+
+//requests made to app
+app.get('/app', main_app.get);
 
 //404 error
 app.get('*', function(req, res){
