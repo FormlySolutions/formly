@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head><% include ../partials/head %>
+<script src = "js/client_main_app.js"></script>
 </head>
 <body>
 	<div class="vflex_container">
@@ -9,6 +10,7 @@
 			<div class="main_app_sidebar">
 				<h2>Children</h2>
 				<%- include("../partials/main_app_sidebar_child",{name: "John"}) %>
+				<%- include("../partials/main_app_sidebar_child",{name: "John"}) %>
 				<div class="main_app_sidebar_item main_app_sidebar_add_child">+</div>
 			</div>
 			<div class="main_app_content">
@@ -16,15 +18,17 @@
 					<div class="flex_container main_app_content_header"><%-
 						include("../partials/main_app_content_header_name",{name: "John"})
 						%></div>
-					<div class="flex_container main_app_content_body">
+					<div class="vflex_container main_app_content_body">
+						<%-
+								include("../partials/main_app_content_forms_supercontainer",{category_name:
+								"New Forms"}) %>
 						<div class="content_forms_supercontainer">
-							<b>New Forms</b><br>
+							<b>Past Forms</b><br>
 							<div class="flex_container content_forms_container"><%-
 								include("../partials/main_app_content_form",{name:
 								"Vimy Ridge Trip", date: "Jan 7"}) %>
 								</div>
 						</div>
-						
 					</div>
 				</div>
 			</div>

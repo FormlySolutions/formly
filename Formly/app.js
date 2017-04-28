@@ -12,8 +12,8 @@ var express = require('express')
   , main_app = require('./routes/app')//app
   , http = require('http')
   , path = require('path')
+  , morgan = require('morgan')
   , bodyParser = require('body-parser');
-
 var app = express();
 var router = express.Router();
 // all environments
@@ -26,6 +26,7 @@ app.set('view engine', 'ejs');
 //app.use(express.methodOverride());
 //app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(morgan('combined'));
 var jsonParser = bodyParser.json();
 var urlParser = bodyParser.urlencoded({extended: false});
 

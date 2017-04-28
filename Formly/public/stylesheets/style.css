@@ -4,9 +4,11 @@ body {
 	width: 100%;
 	height: 100%;
 	font: 14px "OrkneyRegular", Helvetica, Arial, sans-serif;
+	background-color: #303030;
+}
+.white{
 	background-color: white;
 }
-
 html {
 	height: 100%;
 }
@@ -71,6 +73,7 @@ a {
 	padding: 30px 0px;
 	width: 260px;
 	padding: 30px 0px;
+	justify-content: flex-end;
 }
 
 .equal_spacer {
@@ -89,15 +92,16 @@ button, .button {
 	color: black;
 	line-height: 100%;
 	color: white;
-	background-color: #D9D9D9;
+	background-color: #505050;
 	transition: width 0.2s;
-	background-color: #D9D9D9;
 }
 
 button:focus, .button:focus {
 	border-style: none;
 }
-
+.relaxed_form{
+	display: auto;
+}
 .smallButton {
 	border-radius: 2px;
 	width: 72px;
@@ -105,6 +109,7 @@ button:focus, .button:focus {
 	line-height: 30px;
 	text-align: center;
 	transition: width 0.2s;
+	margin-left: 12px;
 }
 
 .smallButton:hover {
@@ -113,7 +118,7 @@ button:focus, .button:focus {
 
 .regButton {
 	color: white;
-	background-color: #D9D9D9;
+	background-color: #505050;
 	border-radius: 5px;
 	flex-grow: 1;
 	height: 48px;
@@ -189,6 +194,11 @@ button:focus, .button:focus {
 	margin: 12px;
 }
 
+.min_vmargin {
+	margin-top: 2px;
+	margin-bottom: 2px;
+}
+
 .splash_buttons {
 	margin: 6px;
 	width: 50%;
@@ -228,8 +238,10 @@ button:focus, .button:focus {
 .main_app_sidebar_child:hover {
 	background-color: #636363;
 }
-
 .main_app_sidebar_child_selected {
+	background-color: #6085e6;
+}
+.main_app_sidebar_child_selected:hover {
 	background-color: #6085e6;
 }
 
@@ -246,6 +258,8 @@ button:focus, .button:focus {
 	padding-left: 48px;
 	padding-right: 48px;
 	padding-left: 48px;
+	background-color: white;
+	border-radius: 5px;
 }
 
 .main_app_content_header {
@@ -260,6 +274,7 @@ button:focus, .button:focus {
 	text-align: center;
 	line-height: 48px;
 	font-size: 18px;
+	display: none;
 }
 
 .main_app_content_body {
@@ -270,22 +285,26 @@ button:focus, .button:focus {
 	height: 128px;
 	width: 128px;
 	color: white;
-	background-color: grey;
+	background-color: #404040;
 	border-radius: 5px;
 	margin: 12px;
 	margin-left: 0px;
 	text-align: center;
 	cursor: pointer;
-	transition: width 0.2s, height 0.2s;
+	transition: width 0.2s, height 0.2s, background-color 0.2s;
 }
-
+.content_forms_container{
+	flex-wrap: wrap;
+}
 .content_form_data_container {
-	height: 128px;
+	height: 100%;
 	width: 128px;
 }
 
 .main_app_content_form:hover {
+	background-color: #505050;
 	width: 142px;
+	height: 142px;
 }
 
 .main_app_content_form_accepted {

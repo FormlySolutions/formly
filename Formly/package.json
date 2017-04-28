@@ -9,6 +9,7 @@
     "express": "4.*",
     "ejs": "*",
     "body-parser" : "*",
-    "jquery" : "*"
+    "jquery" : "*",
+    "morgan" : "*"
   }
 }
