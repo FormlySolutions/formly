@@ -1,0 +1,18 @@
+{
+	"id" : "USER_ID",
+	"name" : "USER_NAME",
+	"children" : [
+		{
+		"id" : "CHILD_ID",
+		"name" : "CHILD_NAME",
+		"forms" : [
+			{
+			"id" : "FORM_ID",
+			"name" : "FORM_NAME",
+			"due" : "FORM_DUE",
+			"status" : "FORM_STATUS", // status is an enum, holding "UNREAD", "READ", "READ_ACC", "READ_DEC" 
+			}
+		]
+		}
+	]
+}

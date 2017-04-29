@@ -1,3 +1,4 @@
+<template id = "content_form_template">
 <div class="flex_container main_app_content_form">
 	<div class="equal_spacer"></div>
 	<div class="vflex_container content_form_data_container">
@@ -8,10 +9,11 @@
 			<div class="seperator"></div>
 			<div class="equal_spacer"></div>
 		</div>
-		<div class="content_form_date">
-			<b>Due: </b><%= date %>
+		<div class="content_form_date_container">
+			<b>Due: </b><span class = "content_form_date"><%= date %></span>
 		</div>
 		<div class="equal_spacer"></div>
 	</div>
 	<div class="equal_spacer"></div>
 </div>
+</template>

@@ -6,9 +6,11 @@ body {
 	font: 14px "OrkneyRegular", Helvetica, Arial, sans-serif;
 	background-color: #303030;
 }
-.white{
+
+.white {
 	background-color: white;
 }
+
 html {
 	height: 100%;
 }
@@ -93,15 +95,17 @@ button, .button {
 	line-height: 100%;
 	color: white;
 	background-color: #505050;
-	transition: width 0.2s;
+	transition: width 0.2s, background-color 0.2s;
 }
 
 button:focus, .button:focus {
 	border-style: none;
 }
-.relaxed_form{
+
+.relaxed_form {
 	display: auto;
 }
+
 .smallButton {
 	border-radius: 2px;
 	width: 72px;
@@ -136,8 +140,13 @@ button:focus, .button:focus {
 }
 
 .button_signin {
-	background-color: #4fa7ff;
+	background-color: #6085e6;
 	color: white;
+	transition: width 0.2s, background-color 0.2s;
+}
+
+.button_signin:hover {
+	background-color: #7095f6;
 }
 
 .button_splash {
@@ -233,14 +242,17 @@ button:focus, .button:focus {
 .main_app_sidebar_child {
 	background-color: #535353;
 	color: white;
+	display: none;
 }
 
 .main_app_sidebar_child:hover {
 	background-color: #636363;
 }
+
 .main_app_sidebar_child_selected {
 	background-color: #6085e6;
 }
+
 .main_app_sidebar_child_selected:hover {
 	background-color: #6085e6;
 }
@@ -262,21 +274,6 @@ button:focus, .button:focus {
 	border-radius: 5px;
 }
 
-.main_app_content_header {
-	height: 48px;
-}
-
-.main_app_content_header_name {
-	flex-grow: 1;
-	background-color: #4fa7ff;
-	color: white;
-	border-radius: 5px;
-	text-align: center;
-	line-height: 48px;
-	font-size: 18px;
-	display: none;
-}
-
 .main_app_content_body {
 	flex-grow: 1;
 }
@@ -286,6 +283,7 @@ button:focus, .button:focus {
 	width: 128px;
 	color: white;
 	background-color: #404040;
+	display: none;
 	border-radius: 5px;
 	margin: 12px;
 	margin-left: 0px;
@@ -293,9 +291,18 @@ button:focus, .button:focus {
 	cursor: pointer;
 	transition: width 0.2s, height 0.2s, background-color 0.2s;
 }
-.content_forms_container{
+.content_form_accepted{
+	background-color: #91D9AF;
+}
+.content_form_declined{
+	background-color: #e96c56;
+}
+
+.content_forms_container {
+	height: 173px;
 	flex-wrap: wrap;
 }
+
 .content_form_data_container {
 	height: 100%;
 	width: 128px;
@@ -356,4 +363,16 @@ button:focus, .button:focus {
 	text-align: center;
 	margin: 6px;
 	color: #999999;
+}
+
+.main_app_content_header {
+	height: 48px;
+	width: 100%;
+	background-color: #303030;
+	color: white;
+	margin-left: 0px;
+}
+
+.main_app_content_header:focus {
+	outline: none;
 }

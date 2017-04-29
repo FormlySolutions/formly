@@ -52,7 +52,7 @@ app.get('/users', user.list);
 	// requests made to app
 	app.get('/app', main_app.get);
 // routing of API based requests, commonly for data
-	app.get('/data', data.get);
+	app.get('/data*', data.get);
 // 404 error
 app.get('*', function(req, res){
 	res.send('Sorry, our servers do not recognise that URL.');
