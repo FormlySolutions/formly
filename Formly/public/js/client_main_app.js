@@ -1,6 +1,12 @@
 var selected_child = null;
-
+var DATA = null; //holds all user data sent by server. 
+var active; // whether or not the app is active, after recieving a ajax request for data
 $(function() {// runs as soon as the page is ready and jquery is setup
+	// before anything else, make an ajax request to a data port on the server,
+	// asking for data to populate the "app"
+	$.get('data', function(data, status) {
+		DATA = data;
+	});
 	$('.main_app_sidebar_item').on('click', function() {
 		click_sidebar_item($(this));
 	}); // forward clicks on sidebar items to the handler function for future
