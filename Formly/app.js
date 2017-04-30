@@ -48,6 +48,7 @@ app.get('/users', user.list);
 	app.post('/reg', urlParser, reg.post);
 	// requests made to signin page
 	app.get('/signin', signin.get);
+	app.post('/signin', signin.post)
 	
 	// requests made to app
 	app.get('/app', main_app.get);

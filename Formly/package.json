@@ -10,6 +10,7 @@
     "ejs": "*",
     "body-parser" : "*",
     "jquery" : "*",
-    "morgan" : "*"
+    "morgan" : "*",
+    "js-cookie" : "*"
   }
 }

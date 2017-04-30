@@ -77,6 +77,14 @@ a {
 	padding: 30px 0px;
 	justify-content: flex-end;
 }
+.profile{
+	display: flex;
+	margin-right: 48px;
+	padding: 30px 0px;
+	width: 260px;
+	padding: 30px 0px;
+	justify-content: flex-end;
+}
 
 .equal_spacer {
 	flex-grow: 1;

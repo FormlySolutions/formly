@@ -33,7 +33,7 @@ add_sidebar_children = function(children) {
 		var sidebar_child_id = 'sidebar_child-' + children.indexOf(child);
 		new_child.attr('id', sidebar_child_id);
 		new_child.html(child.name);
-		sidebar_children.prepend(new_child);
+		sidebar_children.append(new_child);
 		new_child.slideDown();
 	});
 }
