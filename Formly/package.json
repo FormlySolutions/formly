@@ -11,6 +11,8 @@
     "body-parser" : "*",
     "jquery" : "*",
     "morgan" : "*",
-    "js-cookie" : "*"
+    "js-cookie" : "*",
+    "mongodb" : "*",
+    "cookie-parser" : "*"
   }
 }

@@ -17,9 +17,12 @@
 				school board supports Formly. Please enter the information required
 				below.</p>
 			<form action="prereg" method="post" enctype="application/json">
-				<input type="text" class="input_text" name="School Board"
-					placeholder="School Board" required="required"> <input
-					type="text" class="input_text" name="Country" placeholder="Country"
+			<% if(failed == 'true'){ %> 
+				<div class="banner_failed">Sorry, we don't support this board yet.</div>
+					<%}%>
+				<input type="text" class="input_text" name="Board"
+					placeholder="School Board (e.g. DDSB)" required="required"> <input
+					type="text" class="input_text" name="Country" placeholder="Country (e.g. CA or US)"
 					required="required"> <% include
 				../partials/form_buttons_help_submit %>
 			</form>

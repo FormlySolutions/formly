@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
-<head><% include ../partials/head %>
+<head>
+<%- include ../partials/head %>
+<script type="text/javascript" src="js/client_signin.js"></script>
 </head>
-<body class = "white">
+<body class="white">
 	<% include ../partials/header %>
 	<div class="flex_container">
 		<div class="equal_spacer"></div>
@@ -13,9 +15,13 @@
 				<div class="seperator"></div>
 				<div class="equal_spacer"></div>
 			</div>
-			<form action="signin" method="post" enctype="application/json">
-				<input type="text" class="input_text" name="Username"
-					placeholder="Username" required="required"> <input
+			<form method="post" action="signin" id="sign_in_form">
+			<% if(failed == 'true'){ %> 
+				<div class="banner_failed">Sorry, those credentials
+					are incorrect.</div>
+					<%}%>
+				<input type="text" class="input_text" name="Email"
+					placeholder="Email" required="required"> <input
 					type="password" class="input_text" name="Password"
 					placeholder="Password" required="required">
 				<div class="flex_container">

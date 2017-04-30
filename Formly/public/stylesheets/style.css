@@ -31,7 +31,7 @@ h2 {
 
 p {
 	margin: 6px;
-	font: 14px "OrkneyRegular";
+	font: 14px "OrkneyRegular", Helvetica;
 	margin-top: 0px;
 }
 
@@ -91,7 +91,7 @@ a {
 }
 
 button, .button {
-	font: 14px "OrkneyRegular";
+	font: 14px "OrkneyRegular", Helvetica;
 	backround: none;
 	border: none;
 	border-radius: 5px;
@@ -347,7 +347,14 @@ button:focus, .button:focus {
 .input_chk {
 	margin-left: 6px;
 }
-
+.banner_failed{
+	background-color: #e96c56;
+	color: white;
+	margin: 6px;
+	padding: 6px;
+	border-radius: 2px;
+	text-align: center;
+}
 .main_app_content {
 	flex-grow: 1;
 }

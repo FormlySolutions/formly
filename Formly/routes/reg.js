@@ -1,11 +1,22 @@
-
 /*
  * GET registration.
  */
-
-exports.get = function(req, res){
-  res.render('../views/pages/register', { title: 'Express' });
+var auth = require('../auth');
+exports.get = function(req, res) {
+	if (req.cookies.prereg_validated == 'true') {
+		res.render('../views/pages/register', {
+			title : 'Express'
+		});
+	} else {
+		res.redirect('/')
+	}
 };
-exports.post = function(req, res){
-	res.redirect("/app");
-	};
+exports.post = function(req, res) {
+	if (req.cookies.prereg_validated == 'true') {
+		console.log(req.body);
+		auth.createUser(req.body.Name, req.body.Email, req.body.Password);
+		res.redirect("/signin");
+	} else {
+		res.redirect('/')
+	}
+};

@@ -10,11 +10,14 @@ var express = require('express')
   , reg = require('./routes/reg')// registration page
   , signin = require('./routes/signin')// signin page
   , main_app = require('./routes/app')// app
-  , data = require('./routes/data')//manages api requests for data
+  , data = require('./routes/data')// manages api requests for data
   , http = require('http')
   , path = require('path')
   , morgan = require('morgan')
+  , cookieParser = require('cookie-parser')
   , bodyParser = require('body-parser');
+var database = require('./database');
+var auth = require('./auth');
 var app = express();
 var router = express.Router();
 // all environments
@@ -28,16 +31,13 @@ app.set('view engine', 'ejs');
 // app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(morgan('combined'));
+app.use(cookieParser());
 var jsonParser = bodyParser.json();
 var urlParser = bodyParser.urlencoded({extended: false});
 
-// development only
-// if ('development' == app.get('env')) {
-  // app.use(express.errorHandler());
-// }
+//screen requests to all URL, looking for sign in cookie. if it is there, fast-forward to /app
 // someone came to the splash page
 app.get('/', routes.index);
-app.get('/users', user.list);
 
 // initial routing of normal requests
 	// requests to pre-register page
@@ -48,7 +48,7 @@ app.get('/users', user.list);
 	app.post('/reg', urlParser, reg.post);
 	// requests made to signin page
 	app.get('/signin', signin.get);
-	app.post('/signin', signin.post)
+	app.post('/signin',urlParser, signin.post)
 	
 	// requests made to app
 	app.get('/app', main_app.get);
@@ -59,6 +59,10 @@ app.get('*', function(req, res){
 	res.send('Sorry, our servers do not recognise that URL.');
 })
 
-http.createServer(app).listen(app.get('port'), function(){
-  console.log('Formly is active on port ' + app.get('port'));
-});
+init = function() {
+	//database.init(); ping later on...but redundant and annoying rn
+	http.createServer(app).listen(app.get('port'), function(){
+		  console.log('Formly is active on port ' + app.get('port'));
+		});
+}
+init();
