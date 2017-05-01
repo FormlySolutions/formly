@@ -77,7 +77,8 @@ a {
 	padding: 30px 0px;
 	justify-content: flex-end;
 }
-.profile{
+
+.profile {
 	display: flex;
 	margin-right: 48px;
 	padding: 30px 0px;
@@ -95,6 +96,7 @@ button, .button {
 	backround: none;
 	border: none;
 	border-radius: 5px;
+	box-shadow: 0px 0px 0px;
 	background-color: white;
 	cursor: pointer;
 	text-decoration: none;
@@ -103,11 +105,11 @@ button, .button {
 	line-height: 100%;
 	color: white;
 	background-color: #505050;
-	transition: width 0.2s, background-color 0.2s;
+	transition: 0.2s;
 }
 
 button:focus, .button:focus {
-	border-style: none;
+	outline: none;
 }
 
 .relaxed_form {
@@ -299,10 +301,12 @@ button:focus, .button:focus {
 	cursor: pointer;
 	transition: width 0.2s, height 0.2s, background-color 0.2s;
 }
-.content_form_accepted{
+
+.content_form_accepted {
 	background-color: #91D9AF;
 }
-.content_form_declined{
+
+.content_form_declined {
 	background-color: #e96c56;
 }
 
@@ -347,7 +351,8 @@ button:focus, .button:focus {
 .input_chk {
 	margin-left: 6px;
 }
-.banner_failed{
+
+.banner_failed {
 	background-color: #e96c56;
 	color: white;
 	margin: 6px;
@@ -355,6 +360,7 @@ button:focus, .button:focus {
 	border-radius: 2px;
 	text-align: center;
 }
+
 .main_app_content {
 	flex-grow: 1;
 }
@@ -378,6 +384,12 @@ button:focus, .button:focus {
 	text-align: center;
 	margin: 6px;
 	color: #999999;
+	transition: box-shadow 0.2s;
+}
+
+.input_text:focus {
+	outline: none;
+	box-shadow: 0px 2px 10px #999999;
 }
 
 .main_app_content_header {

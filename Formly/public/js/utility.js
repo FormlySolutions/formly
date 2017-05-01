@@ -16,8 +16,9 @@ function getCookie(cname) {
 function delete_cookie(cname) {
 	document.cookie = cname + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
 }
-sign_out = function(){
+sign_out = function() {
 	delete_cookie('user_authenticated');
 	delete_cookie('prereg_validated');
+	delete_cookie('user_id');
 	window.location.href = "/";
 }

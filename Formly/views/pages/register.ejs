@@ -16,6 +16,9 @@
 			<p>We just need a bit of information to make your account. This
 				is how you will log into formly.</p>
 			<form action="reg" method="post">
+				<% if(failed == 'true'){ %> 
+				<div class="banner_failed">That email address is already being used.</div>
+				<%}%>
 			<input type="text" class="input_text" name="Name"
 					placeholder="Full Name" required="required"> 
 				<input type="text" class="input_text" name="Email"

@@ -13,6 +13,8 @@
     "morgan" : "*",
     "js-cookie" : "*",
     "mongodb" : "*",
-    "cookie-parser" : "*"
+    "cookie-parser" : "*",
+    "node-gyp" : "*",
+    "bcrypt" : "*"
   }
 }

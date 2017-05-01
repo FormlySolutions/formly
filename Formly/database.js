@@ -1,5 +1,6 @@
 //This file will abstract and handle all DB communications
 MongoClient = require('mongodb').MongoClient;
+ObjectID = require('mongodb').ObjectID;
 var url = "mongodb://localhost:27017/formly";
 
 exports.init = function() {
@@ -14,7 +15,6 @@ exports.writeUser = function(name, email, password, callback) {
 		"password" : password
 	} ];
 	write("users", user, function() {
-
 	});
 }
 exports.getUser = function(email, password, callback) {
@@ -24,6 +24,36 @@ exports.getUser = function(email, password, callback) {
 	}
 	read('users', user_query, function(user) {
 		callback(user);
+	});
+}
+exports.getUserByEmail = function(email, callback){
+	var user_query = {
+			"email" : email
+		}
+	var projection = {
+			"name" : 1,
+			"password" : 1
+	}
+		read_specific('users', user_query, projection, function(user) {
+			callback(user[0]);
+		});
+}
+exports.getUserByID = function(id, callback){
+	var user_id = ObjectID(id);
+	var user_query = {
+			"_id" : user_id
+		}
+		read('users', user_query, function(user) {
+			callback(user[0]);
+		});
+}
+exports.getStudentByID = function(id, callback){
+	var student_id = ObjectID(id);
+	var student_query = {
+			"_id" : student_id
+	}
+	read('students', student_query, function(){
+		callback(user[0]);
 	});
 }
 exports.getBoard = function(name, country, callback) {
@@ -43,7 +73,13 @@ write = function(collectionPath, data, callback) {
 		});
 	});
 }
-read = function(collectionPath, queries, callback) {
+read = function(collectionPath, queries, callback){
+	read_specific(collectionPath, queries, {}, function(data){
+	callback(data);
+	});	
+	}
+
+read_specific = function(collectionPath,queries,projection, callback) {
 	MongoClient.connect(url, function(err, db) {
 		var collection = db.collection(collectionPath);
 		collection.find(queries, function(err, cursor) {
