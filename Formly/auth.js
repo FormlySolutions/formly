@@ -19,7 +19,7 @@ exports.auth = function(email, password, callback) {
 }
 exports.createUser = function(name, email, password, callback) {
 	database.getUserByEmail(email, function(user){
-		if(Object.keys(user).length == 0){// if user does not exist yet
+		if(user != undefined ? Object.keys(user).length == 0 : true){// if user does not exist yet
 			bcrypt.hash(password, saltRounds, function(err, hash) {
 				database.writeUser(name, email, hash);
 				callback('SUCCESS');

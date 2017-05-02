@@ -1,7 +1,8 @@
 //This file will abstract and handle all DB communications
 MongoClient = require('mongodb').MongoClient;
 ObjectID = require('mongodb').ObjectID;
-var url = "mongodb://localhost:27017/formly";
+DEVMODE = false; //if true, Database access will be overidden by sample data.
+var url = "mongodb://jamohile:hj47rr6r6qId1rzx@cluster0-shard-00-00-ncgje.mongodb.net:27017,cluster0-shard-00-01-ncgje.mongodb.net:27017,cluster0-shard-00-02-ncgje.mongodb.net:27017/Formly?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin";
 
 exports.init = function() {
 	MongoClient.connect(url, function(err, db) {

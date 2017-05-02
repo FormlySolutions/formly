@@ -10,6 +10,7 @@ exports.post = function(req, res){
 	validate_prereg(req, res);
 	};
 validate_prereg = function(req, res){
+	if(!DEVMODE){
 	auth.validatePrereg(req.body.Board, req.body.Country, function(valid) {
 		if(valid){
 			prereg_validated(res);
@@ -17,6 +18,9 @@ validate_prereg = function(req, res){
 			  res.render('../views/pages/pre_register', { failed: 'true' });
 		}
 	})
+	}else{
+		prereg_validated(res);
+	}
 }
 prereg_validated = function(res){
 	let options = {

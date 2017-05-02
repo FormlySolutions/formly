@@ -8,14 +8,17 @@ exports.get = function(req, res) {
 	});
 };
 exports.post = function(req, res) {
-	auth.auth(req.body.Email, req.body.Password, function(valid, user) {
-		if (valid) {
-			console.log(user._id);
-			sign_in(res, user._id.toString());
-		} else {
-			decline_sign_in(res);
-		}
-	});
+	if (!DEVMODE) {
+		auth.auth(req.body.Email, req.body.Password, function(valid, user) {
+			if (valid) {
+				sign_in(res, user._id.toString());
+			} else {
+				decline_sign_in(res);
+			}
+		});
+	} else {
+		sign_in(res, "DEVMODE");
+	}
 };
 
 sign_in = function(res, user_id) {

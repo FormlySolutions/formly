@@ -3,17 +3,26 @@ var USER = null; // holds all user data sent by server.
 var active = false; // whether or not the app is active, true only after
 // recieving a ajax response for data
 // runtime variables
+var content_width;
+var content_height;
 var selected_child = null;
 $(function() {// runs as soon as the page is ready and jquery is setup
 	// before anything else, make an ajax request to a data port on the server,
 	// asking for data to populate the "app"
 	get_user_data();
+	content_width = $('#content').width();
+	content_height = $('#content').height();
 	$('#sidebar').on('click','.main_app_sidebar_item', function() {
 		if (active) { // only respond if page is active
 			click_sidebar_item($(this));
 		}
 	}); // forward clicks on sidebar items to the handler function for future
 	// differentiation
+	$('#content').on('click', '.main_app_content_form', function(){
+		if(active){
+			handle_form_click($(this));
+		}
+	});
 });
 get_user_data = function() {
 	$.get('data', function(data, status) {
@@ -81,6 +90,9 @@ click_sidebar_item = function(item) {
 		} else {
 		// add child button
 	}
+}
+handle_form_click = function(item){
+	item.attr('display', 'float');
 }
 handle_child_selection = function(child){
 	// the clicked item is a child item
