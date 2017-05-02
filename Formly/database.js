@@ -52,8 +52,17 @@ exports.getStudentByID = function(id, callback){
 	var student_query = {
 			"_id" : student_id
 	}
-	read('students', student_query, function(){
+	read('students', student_query, function(user){
 		callback(user[0]);
+	});
+}
+exports.getFormByID = function(id, callback){
+	var form_id = ObjectID(id);
+	var form_query = {
+			"_id" : form_id
+	}
+	read('forms', form_query, function(form){
+		callback(form[0]);
 	});
 }
 exports.getBoard = function(name, country, callback) {
