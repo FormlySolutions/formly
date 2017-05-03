@@ -5,16 +5,25 @@ const saltRounds = 8;
 exports.auth = function(email, password, callback) {
 	var result;
 	database.getUserByEmail(email, function(user) {
-		if (!Object.keys(user).length == 0) {// if object is not empty
+		var validAuth = true;
+		if(user == undefined){
+			validAuth = false;
+		}else if (Object.keys(user).length == 0) {
+			validAuth = false;
+		}
+		if (validAuth) {// if object is not empty
 			bcrypt.compare(password, user.password, function(err, res) {
 			   //compare hash to plaintext
 				result = res;
+				if(result){
+					callback(true, user)
+				}else{
+					callback(true, user);
+				}
 			});
-			result = true;
-		} else {
-			result = false;
+		}else{
+			callback(false);
 		}
-		callback(result, user);
 	});
 }
 exports.createUser = function(name, email, password, callback) {
