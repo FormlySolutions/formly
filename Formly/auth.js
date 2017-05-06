@@ -18,7 +18,7 @@ exports.auth = function(email, password, callback) {
 				if(result){
 					callback(true, user)
 				}else{
-					callback(true, user);
+					callback(false, user);
 				}
 			});
 		}else{

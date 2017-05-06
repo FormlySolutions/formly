@@ -26,10 +26,14 @@ get_data = function(id, callback) {
 				var num_forms = Object.keys(req_user.children[i].forms).length;
 				req_user.children[i].forms.forEach(function(form, x) {
 					database.getFormByID(form.id, function(form_data) {
-						req_user.children[i].forms[x] = form_data;
-						if (i == num_children - 1 && x == num_forms - 1) {
-							callback(req_user);
-						}
+						form_data.status = form.status;
+						database.createActionsForForm(child.id, form.id, function(code) {
+							form_data.action = code;
+							req_user.children[i].forms[x] = form_data;
+							if (i == num_children - 1 && x == num_forms - 1) {
+								callback(req_user);
+							}
+						});
 					});
 				});
 			});

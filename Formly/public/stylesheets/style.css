@@ -28,11 +28,21 @@ h2 {
 	width: 100%;
 	color: white;
 }
+h3{
+	margin: 6px;
+	margin-left: 0px;
+	color: #404040;
+	text-align: left;
+}
 
 p {
 	margin: 6px;
 	font: 14px "OrkneyRegular", Helvetica;
 	margin-top: 0px;
+}
+p2{
+	font: 14px "OrkneyRegular", Helvetica;
+	margin: 0px;
 }
 
 a {
@@ -87,6 +97,10 @@ a {
 	justify-content: flex-end;
 }
 
+.hidden {
+	display: none;
+}
+
 .equal_spacer {
 	flex-grow: 1;
 }
@@ -96,8 +110,7 @@ button, .button {
 	backround: none;
 	border: none;
 	border-radius: 5px;
-	box-shadow: 0px 0px 0px;
-	background-color: white;
+	box-shadow: 0px 0px 0px; background-color : white;
 	cursor: pointer;
 	text-decoration: none;
 	text-align: center;
@@ -105,6 +118,9 @@ button, .button {
 	line-height: 100%;
 	color: white;
 	background-color: #505050;
+	background-color: white; cursor : pointer; text-decoration : none;
+	text-align : center; color : black; line-height : 100%; color : white;
+	background-color : #505050;
 	transition: 0.2s;
 }
 
@@ -193,7 +209,20 @@ button:focus, .button:focus {
 .button_learnmore_splash {
 	background-color: #91D9AF;
 }
-
+.button_decline_details_primary{
+	background-color: #e96c56;
+}
+.button_continue_details_primary{
+	background-color: #91D9AF;
+}
+.button_decline_details_secondary{
+	background-color: #e96c56;
+	flex-grow: 1;
+}
+.button_accept_details_secondary{
+	background-color: #91D9AF;
+	flex-grow: 1;
+}
 .splash {
 	font: 66px "Bree Serif";
 	text-align: center;
@@ -209,6 +238,14 @@ button:focus, .button:focus {
 	height: 0px;
 	border-style: solid;
 	border-width: 1px;
+	border-color: #dddddd;
+	margin: 12px;
+}
+.sub_seperator {
+	width: 100%;
+	height: 0px;
+	border-style: solid;
+	border-width: 0.2px;
 	border-color: #dddddd;
 	margin: 12px;
 }
@@ -231,7 +268,9 @@ button:focus, .button:focus {
 .main_app_sidebar {
 	background-color: #242424;
 	width: 222px;
+	min-width: 222px;
 	padding: 12px;
+	transition: width 0.2s;
 }
 
 .main_app_sidebar_item {
@@ -282,6 +321,16 @@ button:focus, .button:focus {
 	padding-left: 48px;
 	background-color: white;
 	border-radius: 5px;
+}
+
+.main_app_form_details {
+	padding: 12px;
+	padding-left: 48px;
+	padding-right: 48px;
+	padding-left: 48px;
+	background-color: white;
+	border-radius: 5px;
+	flex-grow: 1;
 }
 
 .main_app_content_body {
@@ -402,4 +451,49 @@ button:focus, .button:focus {
 
 .main_app_content_header:focus {
 	outline: none;
+}
+
+.form_details_header {
+	height: auto;
+	color: grey;
+	font-size: 12px;
+	line-height: 36px;
+}
+
+.form_details_header_name {
+	text-align: center;
+	width: 80%;
+	font-size: 18px;
+	line-height: 36px;
+	font-weight: bold;
+}
+#form_details_back{
+	cursor: pointer;
+}
+#form_details_primary{
+	padding: 12px;
+	padding-top: 0px;
+	flex-grow: 1;
+}
+#form_details_secondary{
+	padding: 12px;
+	padding-top: 0px;
+	flex-grow: 1;
+	
+}
+#form_details_secondary_container{
+	height: 100%;
+}
+#details_primary_buttons{
+}
+#notifications{
+	line-height: 36px;
+	text-align: center;
+	height: 36px;
+	color: white;
+	background-color: #6085e6;
+	display: none;
+}
+.normal_flex{
+	flex-grow: 1;
 }

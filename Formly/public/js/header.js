@@ -4,17 +4,18 @@ $(function(){
 			//redirect to the app
 			window.location.href = '/app';
 		}
-		$('#nav').hide();
-		$('#profile').show();
+		$('#nav').addClass('hidden');
+		$('#profile').removeClass('hidden');
 	}else{
 		if(window.location.pathname == '/app'){
 			//redirect to the app
 			window.location.href = '/';
 		}
-		$('#nav').show();
-		$('#profile').hide();
+		$('#profile').addClass('hidden');
+		$('#nav').removeClass('hidden');
 	}
 	$('.button_profile').on('click', function(){
 		sign_out();
-	})
+	});
+	$('.button_register')
 });
